@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 
+	"github.com/jmoiron/sqlx"
 	_ "github.com/mattn/go-sqlite3"
 )
 
@@ -15,8 +16,19 @@ func main() {
 		panic(err)
 	}
 
-	// query to select top 10 shortest runtime movies
-	rows, err := db.Query("SELECT title, director, year, runtime FROM movies ORDER BY runtime limit 10")
+	// query to select top 10 shortest runtime movies by given directors and years
+	sql := "SELECT title, director, year, runtime FROM movies WHERE director IN (?) AND year IN (?) ORDER BY runtime limit ?"
+	directors := []string{"Clint Eastwood", "Christopher Nolan", "Steven Spielberg"}
+	years := []int{1981, 1989, 1993, 2000, 2008}
+	count := 10
+
+	// expanding '?' placeholders for array args. Not needed for queries without array args
+	query, args, err := sqlx.In(sql, directors, years, count)
+	if err != nil {
+		panic(err)
+	}
+
+	rows, err := db.Query(query, args...)
 	if err != nil {
 		panic(err)
 	}

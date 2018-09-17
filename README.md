@@ -14,20 +14,20 @@ Simple go app to load the SQLite file (`movies.db`) included in this repo.
 2. Make sure you see output like this
 ```
 ------------------------------------
-Title: Sherlock Jr.
-Director: Buster Keaton
-Year: 1924
-Runtime: 45
+Title: Memento
+Director: Christopher Nolan
+Year: 2000
+Runtime: 113
 ------------------------------------
-Title: The General
-Director: Clyde Bruckman, Buster Keaton
-Year: 1926
-Runtime: 67
+Title: Raiders of the Lost Ark
+Director: Steven Spielberg
+Year: 1981
+Runtime: 115
 ------------------------------------
-Title: The Kid
-Director: Charles Chaplin
-Year: 1921
-Runtime: 68
+Title: Gran Torino
+Director: Clint Eastwood
+Year: 2008
+Runtime: 116
 ------------------------------------
 ...
 ```
