@@ -31,3 +31,11 @@ Runtime: 116
 ------------------------------------
 ...
 ```
+
+## Preparing for the onsite
+
+We want you to feel prepared for the on-site. Before you arrive, be able to answer the following questions using the dataset we've provided:
+
+1. What is the longest-running movie?
+2. What movie has the most actors?
+3. What is the breakdown of top movies by rating?
